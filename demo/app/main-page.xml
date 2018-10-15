@@ -1,6 +1,35 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page"
   xmlns:ui="nativescript-cifrate">
   <StackLayout class="p-20">
-    <Label text="{{ message }}" class="t-20 text-center c-black" textWrap="true"/>
+    <TextField
+      hint="Enter a test to cifrate"
+      text="{{ textInput }}"
+      secure="false"
+      autocorrect="true"
+      ></TextField>
+    <TextField
+      hint="Enter a password"
+      text="{{ password1 }}"
+      secure="true"
+      autocorrect="false"
+      returnKeyType="send"
+      returnPress="encrypt"
+      ></TextField>
+    <Button
+      tap="encrypt"
+      text="Cifrate!"
+      ></Button>
+    <Label text="{{ 'Your encrypted data: ' + encryptedText }}" textWrap="true"></Label>
+    <TextField
+      hint="Re-enter the password"
+      text="{{ password2 }}"
+      secure="true"
+      returnKeyType="send"
+      autocorrect="false"></TextField>
+    <Button
+      tap="decrypt"
+      text="Decifrate!"
+      ></Button>
+    <Label text="{{ 'Your decrypted text: ' + decryptedText }}" textWrap="true"></Label>
   </StackLayout>
 </Page>

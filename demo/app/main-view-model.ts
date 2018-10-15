@@ -1,14 +1,13 @@
 import { Observable } from 'tns-core-modules/data/observable';
-import { Cifrate } from 'nativescript-cifrate';
 
 export class HelloWorldModel extends Observable {
-  public message: string;
-  private cifrate: Cifrate;
+  public decryptedText: string = "";
+  public encryptedText: string = "";
+  public textInput: string;
+  public password1: string;
+  public password2: string;
 
   constructor() {
     super();
-
-    this.cifrate = new Cifrate();
-    this.message = this.cifrate.message;
   }
 }
